@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/glm -I/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/headers 
+CXX_INCLUDES = -I/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm -I/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/headers 
 

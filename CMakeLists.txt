@@ -10,7 +10,7 @@ file(GLOB_RECURSE lab4_sources "source/*.cpp")
 
 add_executable(output ${lab4_sources})
 
-target_include_directories(output PRIVATE /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/glm)
+target_include_directories(output PRIVATE /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm)
 target_include_directories(output PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/source/headers/)
 
 find_package(OpenGL REQUIRED)

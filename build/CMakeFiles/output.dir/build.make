@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.13.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9
+CMAKE_SOURCE_DIR = /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build
+CMAKE_BINARY_DIR = /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/output.dir/depend.make
@@ -59,107 +59,107 @@ include CMakeFiles/output.dir/flags.make
 
 CMakeFiles/output.dir/source/ClippingPlane.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/ClippingPlane.cpp.o: ../source/ClippingPlane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/ClippingPlane.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ClippingPlane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/ClippingPlane.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ClippingPlane.cpp
 
 CMakeFiles/output.dir/source/ClippingPlane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/ClippingPlane.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ClippingPlane.cpp > CMakeFiles/output.dir/source/ClippingPlane.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ClippingPlane.cpp > CMakeFiles/output.dir/source/ClippingPlane.cpp.i
 
 CMakeFiles/output.dir/source/ClippingPlane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/ClippingPlane.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ClippingPlane.cpp -o CMakeFiles/output.dir/source/ClippingPlane.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ClippingPlane.cpp -o CMakeFiles/output.dir/source/ClippingPlane.cpp.s
 
 CMakeFiles/output.dir/source/Defines.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/Defines.cpp.o: ../source/Defines.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/output.dir/source/Defines.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Defines.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Defines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/output.dir/source/Defines.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Defines.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Defines.cpp
 
 CMakeFiles/output.dir/source/Defines.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/Defines.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Defines.cpp > CMakeFiles/output.dir/source/Defines.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Defines.cpp > CMakeFiles/output.dir/source/Defines.cpp.i
 
 CMakeFiles/output.dir/source/Defines.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/Defines.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Defines.cpp -o CMakeFiles/output.dir/source/Defines.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Defines.cpp -o CMakeFiles/output.dir/source/Defines.cpp.s
 
 CMakeFiles/output.dir/source/FrameBuffer.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/FrameBuffer.cpp.o: ../source/FrameBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/output.dir/source/FrameBuffer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/FrameBuffer.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/FrameBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/output.dir/source/FrameBuffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/FrameBuffer.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.cpp
 
 CMakeFiles/output.dir/source/FrameBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/FrameBuffer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/FrameBuffer.cpp > CMakeFiles/output.dir/source/FrameBuffer.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.cpp > CMakeFiles/output.dir/source/FrameBuffer.cpp.i
 
 CMakeFiles/output.dir/source/FrameBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/FrameBuffer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/FrameBuffer.cpp -o CMakeFiles/output.dir/source/FrameBuffer.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.cpp -o CMakeFiles/output.dir/source/FrameBuffer.cpp.s
 
 CMakeFiles/output.dir/source/Lab.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/Lab.cpp.o: ../source/Lab.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/output.dir/source/Lab.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Lab.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Lab.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/output.dir/source/Lab.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Lab.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lab.cpp
 
 CMakeFiles/output.dir/source/Lab.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/Lab.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Lab.cpp > CMakeFiles/output.dir/source/Lab.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lab.cpp > CMakeFiles/output.dir/source/Lab.cpp.i
 
 CMakeFiles/output.dir/source/Lab.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/Lab.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Lab.cpp -o CMakeFiles/output.dir/source/Lab.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lab.cpp -o CMakeFiles/output.dir/source/Lab.cpp.s
 
 CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o: ../source/PerFragmentOperations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerFragmentOperations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.cpp
 
 CMakeFiles/output.dir/source/PerFragmentOperations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/PerFragmentOperations.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerFragmentOperations.cpp > CMakeFiles/output.dir/source/PerFragmentOperations.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.cpp > CMakeFiles/output.dir/source/PerFragmentOperations.cpp.i
 
 CMakeFiles/output.dir/source/PerFragmentOperations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/PerFragmentOperations.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerFragmentOperations.cpp -o CMakeFiles/output.dir/source/PerFragmentOperations.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.cpp -o CMakeFiles/output.dir/source/PerFragmentOperations.cpp.s
 
 CMakeFiles/output.dir/source/PerVertexOperations.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/PerVertexOperations.cpp.o: ../source/PerVertexOperations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/output.dir/source/PerVertexOperations.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/PerVertexOperations.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerVertexOperations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/output.dir/source/PerVertexOperations.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/PerVertexOperations.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.cpp
 
 CMakeFiles/output.dir/source/PerVertexOperations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/PerVertexOperations.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerVertexOperations.cpp > CMakeFiles/output.dir/source/PerVertexOperations.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.cpp > CMakeFiles/output.dir/source/PerVertexOperations.cpp.i
 
 CMakeFiles/output.dir/source/PerVertexOperations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/PerVertexOperations.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/PerVertexOperations.cpp -o CMakeFiles/output.dir/source/PerVertexOperations.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.cpp -o CMakeFiles/output.dir/source/PerVertexOperations.cpp.s
 
 CMakeFiles/output.dir/source/Rasterization.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/Rasterization.cpp.o: ../source/Rasterization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/output.dir/source/Rasterization.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Rasterization.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Rasterization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/output.dir/source/Rasterization.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/Rasterization.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Rasterization.cpp
 
 CMakeFiles/output.dir/source/Rasterization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/Rasterization.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Rasterization.cpp > CMakeFiles/output.dir/source/Rasterization.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Rasterization.cpp > CMakeFiles/output.dir/source/Rasterization.cpp.i
 
 CMakeFiles/output.dir/source/Rasterization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/Rasterization.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/Rasterization.cpp -o CMakeFiles/output.dir/source/Rasterization.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Rasterization.cpp -o CMakeFiles/output.dir/source/Rasterization.cpp.s
 
 CMakeFiles/output.dir/source/ShapeStructs.cpp.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/source/ShapeStructs.cpp.o: ../source/ShapeStructs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/source/ShapeStructs.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/ShapeStructs.cpp.o -c /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ShapeStructs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/source/ShapeStructs.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/output.dir/source/ShapeStructs.cpp.o -c /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.cpp
 
 CMakeFiles/output.dir/source/ShapeStructs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/source/ShapeStructs.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ShapeStructs.cpp > CMakeFiles/output.dir/source/ShapeStructs.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.cpp > CMakeFiles/output.dir/source/ShapeStructs.cpp.i
 
 CMakeFiles/output.dir/source/ShapeStructs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/source/ShapeStructs.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/source/ShapeStructs.cpp -o CMakeFiles/output.dir/source/ShapeStructs.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.cpp -o CMakeFiles/output.dir/source/ShapeStructs.cpp.s
 
 # Object files for target output
 output_OBJECTS = \
@@ -185,7 +185,7 @@ output: CMakeFiles/output.dir/source/Rasterization.cpp.o
 output: CMakeFiles/output.dir/source/ShapeStructs.cpp.o
 output: CMakeFiles/output.dir/build.make
 output: CMakeFiles/output.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable output"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable output"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/output.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/output.dir/clean:
 .PHONY : CMakeFiles/output.dir/clean
 
 CMakeFiles/output.dir/depend:
-	cd /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9 /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9 /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build /Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab9/build/CMakeFiles/output.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles/output.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/output.dir/depend
 

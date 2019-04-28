@@ -20,13 +20,18 @@ FrameBuffer frameBuffer(WINDOW_WIDTH, WINDOW_HEIGHT);
 
 // Objects in the scene
 
-// Pyramids
-Pyramid redPyramid(color(1.0, 0.0, 0.0, 0.5f), 1.0, 1.0 );
 Sphere redSphere(color(1.0, 0.0, 0.0, 0.5f), 1.0, 16, 16);
 Pyramid purplePyramid(color(1.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
-Pyramid frontBluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid backBluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid whitePyramid(color(1.0, 1.0, 1.0, 0.5f), 1.0, 1.0);
+
+Box greenBox(color(0.0, 1.0, 0.0, 1.0), 1.0, 1.0, 1.0);
+Box redBox(color(1.0, 0.0, 0.0, 1.0), 1.0, 1.0, 1.0);
+Box yellowBox(color(1.0, 1.0, 0.0, 1.0), 1.0, 1.0, 1.0);
+Box blueBox(color(0.0, 0.0, 1.0, 1.0), 1.0, 1.0, 1.0);
+
+Box backBlueBox(color(0.0, 0.0, 1.0, 1.0), 1.0, 1.0, 1.0);
+Box frontGreenBox(color(0.0, 1.0, 0.0, 1.0), 2.0, 2.0, 2.0);
 
 // Reference plane
 ReferencePlane referencePlane;
@@ -38,11 +43,6 @@ double angle = glm::radians(45.0);
 
 void renderObjects()
 {
-
-    redPyramid.setPosition(dvec3(0.0, 0.0, 0.0));
-    redPyramid.setOrientation(angle, dvec3(0.0, 1.0, 0.0));
-    redPyramid.draw();
-
     referencePlane.setPosition(dvec3(0.0, -3.0, 0.0));
     referencePlane.draw();
 
@@ -52,10 +52,10 @@ void renderObjects()
     purplePyramid.setScale(2.0);
     purplePyramid.draw(  );
     
-    frontBluePyramid.setPosition(dvec3(-3.5, -2.5, 3.5));
-    frontBluePyramid.draw();
+    backBlueBox.setPosition(dvec3(3.5, -2.5, -3.5));
+    backBlueBox.draw();
 
-    backBluePyramid.setPosition(dvec3(3.5, -2.5, -3.5));
+    backBluePyramid.setPosition(dvec3(3.5, -1.5, -3.5));
     backBluePyramid.draw();
 
     redSphere.setPosition(dvec3(3.0, 0.0, 0.0));
@@ -66,7 +66,22 @@ void renderObjects()
 #warning make this tumble later
     whitePyramid.setOrientation(-angle, dvec3(1.0, -1.0, 0.0));
     whitePyramid.draw();
+
+    greenBox.setPosition(dvec3(-0.5, -2.5, -0.5));
+    greenBox.draw();
+
+    yellowBox.setPosition(dvec3(0.5, -2.5, -0.5));
+    yellowBox.draw();
+
+    redBox.setPosition(dvec3(0.0, -2.5, 0.5));
+    redBox.draw();
     
+    blueBox.setPosition(dvec3(0.0, -1.5, 0.0));
+    blueBox.setOrientation(glm::radians(45.0), dvec3(0.0, 1.0, 0.0));
+    blueBox.draw();
+
+    frontGreenBox.setPosition(dvec3(-3.0, -2.0, 3.0));
+    frontGreenBox.draw();
 
 /*
     // white orbiting pyramid
@@ -437,7 +452,7 @@ void viewMenu( int value )
 	switch( value ) {
 
 		case( 1 ):
-			PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 ) );
+			PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -12.0 ) );
 			break;
 
 		case( 2 ):
@@ -489,7 +504,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
 	// Create a window using a string and make it the current window.
-	GLuint world_Window = glutCreateWindow("Projection and Viewport Transformations");
+	GLuint world_Window = glutCreateWindow("CSE 287 Project 2 - Dan Minik");
 
 	// Indicate to GLUT that the flow of control should return to the program after
 	// the window is closed and the GLUTmain loop is exited.

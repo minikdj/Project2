@@ -45,5 +45,11 @@ struct Sphere:Shape
 };
 
 
+struct Box:Shape
+{
+    Box( color cubeColor = color(1.0f, 1.0f, 0.0f, 1.0f), float width = 1.0f, float height = 1.0f, float depth = 1.0f);
+
+};
+
 
 

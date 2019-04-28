@@ -104,13 +104,19 @@ PerFragmentOperations.h
 VertexData.h
 ../source/headers/VertexData.h
 
+../source/headers/Shape.h
+Defines.h
+../source/headers/Defines.h
+VertexData.h
+../source/headers/VertexData.h
+
 ../source/headers/ShapeStructs.h
 Defines.h
 ../source/headers/Defines.h
 Lab.h
 ../source/headers/Lab.h
-VertexData.h
-../source/headers/VertexData.h
+Shape.h
+../source/headers/Shape.h
 
 ../source/headers/VertexData.h
 Defines.h

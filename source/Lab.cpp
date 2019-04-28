@@ -23,8 +23,9 @@ FrameBuffer frameBuffer(WINDOW_WIDTH, WINDOW_HEIGHT);
 // Pyramids
 Pyramid redPyramid(color(1.0, 0.0, 0.0, 0.5f), 1.0, 1.0 );
 Sphere redSphere(color(1.0, 0.0, 0.0, 0.5f), 1.0, 16, 16);
-Pyramid magentaPyramid(color(1.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
-Pyramid bluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
+Pyramid purplePyramid(color(1.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
+Pyramid frontBluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
+Pyramid backBluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid whitePyramid(color(1.0, 1.0, 1.0, 0.5f), 1.0, 1.0);
 
 // Reference plane
@@ -37,44 +38,41 @@ double angle = glm::radians(45.0);
 
 void renderObjects()
 {
-	// Set Modeling transformation for the reference plane
-	PerVertex::modelingTransformation = glm::translate(dvec3(0.0, -3.0, 0.0));
 
-	// Send the reference plane vertices down the pipeline
-	PerVertex::processTriangleVertices( referencePlane.c1PlaneVertices );
-	PerVertex::processTriangleVertices( referencePlane.c2PlaneVertices );
+    redPyramid.setPosition(dvec3(0.0, 0.0, 0.0));
+    redPyramid.setOrientation(angle, dvec3(0.0, 1.0, 0.0));
+    redPyramid.draw();
 
+    referencePlane.setPosition(dvec3(0.0, -3.0, 0.0));
+    referencePlane.draw();
 
-	// Set modeling transformation for the center pyramid
-    PerVertex::modelingTransformation = glm::translate(dvec3(0.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(0.0, 1.0, 0.0));
-	PerVertex::processTriangleVertices(redPyramid.triangleVertices);
+    // Set the position and orientation of the left pyramid and render it.
+    purplePyramid.setPosition( dvec3( -3.0, 0.0, 0.0  )  );
+    purplePyramid.setOrientation( angle, dvec3( 0.0, 0.0, 1.0  )  );
+    purplePyramid.setScale(2.0);
+    purplePyramid.draw(  );
+    
+    frontBluePyramid.setPosition(dvec3(-3.5, -2.5, 3.5));
+    frontBluePyramid.draw();
 
-       //left pyramid
-    glm::dmat4 scaleModel;
-    scaleModel[0][0] = 2.0;
-    scaleModel[1][1] = 2.0;
-    scaleModel[2][2] = 2.0;
+    backBluePyramid.setPosition(dvec3(3.5, -2.5, -3.5));
+    backBluePyramid.draw();
 
-    PerVertex::modelingTransformation = glm::translate(dvec3(-3.0, 0.0, 0.0)) * glm::scale(scaleModel, dvec3(1.0, 1.0, 1.0))
-                                            * glm::rotate(angle, dvec3(0.0, 0.0, 1.0));
-    PerVertex::processTriangleVertices(magentaPyramid.triangleVertices);
+    redSphere.setPosition(dvec3(3.0, 0.0, 0.0));
+    redSphere.setOrientation(angle, dvec3(1.0, 0.0, 0.0));
+    redSphere.draw();
 
-    // pyramids on front left and back right of plane
-    PerVertex::modelingTransformation = glm::translate(dvec3( -3.5, -2.5, 3.5));
-    PerVertex::processTriangleVertices(bluePyramid.triangleVertices);
+    whitePyramid.setPosition(dvec3(10.0 * glm::sin(-angle), 3.0, 10 * glm::cos(-angle)));
+#warning make this tumble later
+    whitePyramid.setOrientation(-angle, dvec3(1.0, -1.0, 0.0));
+    whitePyramid.draw();
+    
 
-    PerVertex::modelingTransformation = glm::translate(dvec3(3.5, -2.5, -3.5));
-    PerVertex::processTriangleVertices(bluePyramid.triangleVertices);
-
-    // right sphere 
-    PerVertex::modelingTransformation = glm::translate(dvec3(3.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
-    PerVertex::processTriangleVertices(redSphere.triangleVertices);
-
-
+/*
     // white orbiting pyramid
     PerVertex::modelingTransformation = glm::rotate(-angle, dvec3(0.0, 1.0, 0.0)) * glm::translate(dvec3(10.0, 3.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
     PerVertex::processTriangleVertices(whitePyramid.triangleVertices);
-
+*/
 } // end renderObjects
 
 // myPerspective

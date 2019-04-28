@@ -1,6 +1,4 @@
 #include "ShapeStructs.h"
-#include "Lab.h"
-
 
 Pyramid::Pyramid( color pyColor, double width, double height)
 {
@@ -58,19 +56,19 @@ ReferencePlane::ReferencePlane( double planeWidth, color c1, color c2 )
 {
 	dvec4 n(0.0, 1.0, 0.0, 0.0);
 
-	c1PlaneVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color1, n));
-	c1PlaneVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color1, n));
-	c1PlaneVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color1, n));
-	c1PlaneVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color1, n));
-	c1PlaneVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color1, n));
-	c1PlaneVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color1, n));
+	triangleVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color1, n));
 
-	c2PlaneVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color2, n));
-	c2PlaneVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color2, n));
-	c2PlaneVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color2, n));
-	c2PlaneVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color2, n));
-	c2PlaneVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color2, n));
-	c2PlaneVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, -planeWidth / 2.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(0.0, 0.0, 0.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(-planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color2, n));
+	triangleVertices.push_back(VertexData(dvec4(planeWidth / 2.0, 0.0, planeWidth / 2.0, 1.0), color2, n));
 }
 
 

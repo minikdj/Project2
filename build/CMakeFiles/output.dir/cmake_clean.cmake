@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o"
   "CMakeFiles/output.dir/source/PerVertexOperations.cpp.o"
   "CMakeFiles/output.dir/source/Rasterization.cpp.o"
+  "CMakeFiles/output.dir/source/Shape.cpp.o"
   "CMakeFiles/output.dir/source/ShapeStructs.cpp.o"
   "output.pdb"
   "output"

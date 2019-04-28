@@ -312,6 +312,33 @@ source/Rasterization.cpp.s:
 	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Rasterization.cpp.s
 .PHONY : source/Rasterization.cpp.s
 
+source/Shape.o: source/Shape.cpp.o
+
+.PHONY : source/Shape.o
+
+# target to build an object file
+source/Shape.cpp.o:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Shape.cpp.o
+.PHONY : source/Shape.cpp.o
+
+source/Shape.i: source/Shape.cpp.i
+
+.PHONY : source/Shape.i
+
+# target to preprocess a source file
+source/Shape.cpp.i:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Shape.cpp.i
+.PHONY : source/Shape.cpp.i
+
+source/Shape.s: source/Shape.cpp.s
+
+.PHONY : source/Shape.s
+
+# target to generate assembly for a file
+source/Shape.cpp.s:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Shape.cpp.s
+.PHONY : source/Shape.cpp.s
+
 source/ShapeStructs.o: source/ShapeStructs.cpp.o
 
 .PHONY : source/ShapeStructs.o
@@ -369,6 +396,9 @@ help:
 	@echo "... source/Rasterization.o"
 	@echo "... source/Rasterization.i"
 	@echo "... source/Rasterization.s"
+	@echo "... source/Shape.o"
+	@echo "... source/Shape.i"
+	@echo "... source/Shape.s"
 	@echo "... source/ShapeStructs.o"
 	@echo "... source/ShapeStructs.i"
 	@echo "... source/ShapeStructs.s"

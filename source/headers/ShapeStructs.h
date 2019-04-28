@@ -2,9 +2,9 @@
 
 #include "Defines.h"
 #include "Lab.h"
-#include "VertexData.h"
+#include "Shape.h"
 
-struct ReferencePlane
+struct ReferencePlane:Shape
 {
 	ReferencePlane( double planeWidth = 8.0, 
 					color c1 = color(0.0, 0.0, 0.0, 1.0), 
@@ -13,27 +13,21 @@ struct ReferencePlane
 	color color1;
 	color color2;
 
-	std::vector<VertexData> c1PlaneVertices;
-	std::vector<VertexData> c2PlaneVertices;
-
 };
 
 
-struct Pyramid
+struct Pyramid:Shape
 {
 	Pyramid(color pyColor, double width = 1.0, double height = 1.0);
 
-	std::vector<VertexData> triangleVertices;
 };
 
 
-struct Sphere
+struct Sphere:Shape
 {
 	Sphere( color col, double radius = 0.5f, int slices = 16, int stacks = 16 );
 
 	Material material;
-
-	std::vector<VertexData> triangleVertices;
 
 	protected:
 

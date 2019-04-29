@@ -28,8 +28,8 @@ std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vect
 {
     std::vector<VertexData> visibleTriangles;
 
-    for (int i = 0; i < triangleVerts.size() - 3; i += 3) {
-        if (glm::dot(findUnitNormal(triangleVerts[i+2].position, triangleVerts[i+1].position, triangleVerts[i].position), eyePositionInWorldCoords) < 0) {
+    for (int i = 0; i <= triangleVerts.size() - 3; i += 3) {
+        if (glm::dot(findUnitNormal(triangleVerts[i+2].position, triangleVerts[i+1].position, triangleVerts[i].position), glm::normalize(eyePositionInWorldCoords)) <= 0) {
             visibleTriangles.push_back(triangleVerts[i]);
             visibleTriangles.push_back(triangleVerts[i+1]);
             visibleTriangles.push_back(triangleVerts[i+2]);

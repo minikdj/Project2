@@ -28,8 +28,13 @@ std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vect
 {
     std::vector<VertexData> visibleTriangles;
 
-    for (int i = 0; i <= triangleVerts.size() - 3; i += 3) {
-        if (glm::dot(findUnitNormal(triangleVerts[i+2].position, triangleVerts[i+1].position, triangleVerts[i].position), glm::normalize(eyePositionInWorldCoords)) <= 0) {
+    const dvec3 viewDirection(0.0, 0.0, -1.0);
+
+    for(unsigned int i = 0; i < triangleVerts.size(); i += 3) {
+        dvec3 n = findUnitNormal(triangleVerts[i].position.xyz, 
+                                    triangleVerts[i+1].position.xyz, 
+                                    triangleVerts[i+2].position.xyz);
+        if (glm::dot(viewDirection, n) <= 0) {
             visibleTriangles.push_back(triangleVerts[i]);
             visibleTriangles.push_back(triangleVerts[i+1]);
             visibleTriangles.push_back(triangleVerts[i+2]);
@@ -44,7 +49,22 @@ std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vect
 
 void PerVertex::applyLighting( std::vector<VertexData> & worldCoords )
 {
-	//TODO
+    for (auto wCoord : worldCoords) {
+
+        double alpha = wCoord.material.diffuseColor.a;
+        color totalLight = wCoord.material.emissiveColor;
+
+        for (auto light : lights) {
+
+            totalLight += light->illuminate(PerVertex::eyePositionInWorldCoords, 
+                    wCoord.worldPosition, wCoord.worldNormal, wCoord.material);
+
+        }
+
+        wCoord.material.diffuseColor.a = alpha;
+        wCoord.shadedColor = totalLight;
+
+    }
 
 } // end applyLighting
 
@@ -130,10 +150,11 @@ void PerVertex::processTriangleVertices(const std::vector<VertexData> & objectCo
   	}
   
 	// Backface Cullling
-    std::vector<VertexData> filtered = removeBackwardFacingTriangles(clipCoords); 
-  	// Clipping
+    clipCoords = removeBackwardFacingTriangles(clipCoords);
+    //std::vector<VertexData> filtered = removeBackwardFacingTriangles(clipCoords); 
 
-	std::vector<VertexData> ndcCoords = filtered;
+  	// Clipping
+	std::vector<VertexData> ndcCoords = clipCoords;
   
 	// Window Transformation
   	std::vector<VertexData> windowCoords = transformVertices(viewportTransformation, ndcCoords);

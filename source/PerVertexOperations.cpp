@@ -24,6 +24,21 @@ std::vector<ClippingPlane> PerVertex::ndcPlanes{ ClippingPlane(dvec3(0, 1, 0), d
 											   ClippingPlane(dvec3(0, -1, 0), dvec3(0, 1, 0)),
 											   ClippingPlane(dvec3(0, 0, -1), dvec3(0, 0, 1)) };
 
+std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vector<VertexData> & triangleVerts)
+{
+    std::vector<VertexData> visibleTriangles;
+
+    for (int i = 0; i < triangleVerts.size() - 3; i += 3) {
+        if (glm::dot(findUnitNormal(triangleVerts[i+2].position, triangleVerts[i+1].position, triangleVerts[i].position), eyePositionInWorldCoords) < 0) {
+            visibleTriangles.push_back(triangleVerts[i]);
+            visibleTriangles.push_back(triangleVerts[i+1]);
+            visibleTriangles.push_back(triangleVerts[i+2]);
+        }
+    }
+
+    return visibleTriangles;
+
+}
 
 //********************************** Vertex Shading *********************************
 
@@ -115,11 +130,10 @@ void PerVertex::processTriangleVertices(const std::vector<VertexData> & objectCo
   	}
   
 	// Backface Cullling
-  	//TODO
-  
+    std::vector<VertexData> filtered = removeBackwardFacingTriangles(clipCoords); 
   	// Clipping
-	//TODO
-	std::vector<VertexData> ndcCoords = clipCoords;
+
+	std::vector<VertexData> ndcCoords = filtered;
   
 	// Window Transformation
   	std::vector<VertexData> windowCoords = transformVertices(viewportTransformation, ndcCoords);
@@ -169,3 +183,5 @@ void PerVertex::processLineSegments(const std::vector<VertexData> & objectCoords
 	drawManyLines( windowCoords );
   
 } // end linePipeline
+
+

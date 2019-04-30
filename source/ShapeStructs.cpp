@@ -54,17 +54,17 @@ Box::Box( color cubeColor, float width, float height, float depth )
 	triangleVertices.push_back(VertexData(v3, c, n));
 
     // back 
-    n = dvec4(findUnitNormal(v1.xyz, v5.xyz, v2.xyz), 0.0);
+    n = dvec4(findUnitNormal(v2.xyz, v5.xyz, v1.xyz), 0.0);
 
-    triangleVertices.push_back(VertexData(v1, c, n));
+    triangleVertices.push_back(VertexData(v2, c, n));
 	triangleVertices.push_back(VertexData(v5, c, n));
-	triangleVertices.push_back(VertexData(v2, c, n));
+	triangleVertices.push_back(VertexData(v1, c, n));
 
-    n = dvec4(findUnitNormal(v5.xyz, v6.xyz, v2.xyz), 0.0);
+    n = dvec4(findUnitNormal(v2.xyz, v6.xyz, v5.xyz), 0.0);
 
-    triangleVertices.push_back(VertexData(v5, c, n));
+    triangleVertices.push_back(VertexData(v2, c, n));
 	triangleVertices.push_back(VertexData(v6, c, n));
-	triangleVertices.push_back(VertexData(v2, c, n));
+	triangleVertices.push_back(VertexData(v5, c, n));
 
     // left
     n = dvec4(findUnitNormal(v5.xyz, v0.xyz, v1.xyz), 0.0);
@@ -130,17 +130,18 @@ Pyramid::Pyramid( color pyColor, double width, double height)
     triangleVertices.push_back(VertexData(v4, c, n));
     triangleVertices.push_back(VertexData(v1, c, n));
 
-    n = dvec4(findUnitNormal(v1.xyz, v2.xyz, v3.xyz), 0.0);
+    // should i change these? the bottom is not showing up when it should be
+    n = dvec4(findUnitNormal(v3.xyz, v2.xyz, v1.xyz), 0.0);
                                                     
-    triangleVertices.push_back(VertexData(v1, c, n));
+    triangleVertices.push_back(VertexData(v3, c, n));
     triangleVertices.push_back(VertexData(v2, c, n));
-    triangleVertices.push_back(VertexData(v3, c, n));
-                                                    
-    n = dvec4(findUnitNormal(v3.xyz, v4.xyz, v1.xyz), 0.0);
-                                                   
-    triangleVertices.push_back(VertexData(v3, c, n));
-    triangleVertices.push_back(VertexData(v4, c, n));
     triangleVertices.push_back(VertexData(v1, c, n));
+                                                    
+    n = dvec4(findUnitNormal(v1.xyz, v4.xyz, v3.xyz), 0.0);
+                                                   
+    triangleVertices.push_back(VertexData(v1, c, n));
+    triangleVertices.push_back(VertexData(v4, c, n));
+    triangleVertices.push_back(VertexData(v3, c, n));
 
 }
 

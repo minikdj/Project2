@@ -48,6 +48,20 @@ Defines.h
 Lights.h
 ../source/headers/Lights.h
 
+../source/headers/Lab.h
+Defines.h
+../source/headers/Defines.h
+FrameBuffer.h
+../source/headers/FrameBuffer.h
+PerVertexOperations.h
+../source/headers/PerVertexOperations.h
+Lights.h
+../source/headers/Lights.h
+ShapeStructs.h
+../source/headers/ShapeStructs.h
+VertexData.h
+../source/headers/VertexData.h
+
 ../source/headers/Lights.h
 Defines.h
 ../source/headers/Defines.h
@@ -90,19 +104,29 @@ PerFragmentOperations.h
 VertexData.h
 ../source/headers/VertexData.h
 
+../source/headers/Shape.h
+Defines.h
+../source/headers/Defines.h
+VertexData.h
+../source/headers/VertexData.h
+
+../source/headers/ShapeStructs.h
+Defines.h
+../source/headers/Defines.h
+Lab.h
+../source/headers/Lab.h
+Shape.h
+../source/headers/Shape.h
+
 ../source/headers/VertexData.h
 Defines.h
 ../source/headers/Defines.h
 Material.h
 ../source/headers/Material.h
 
-/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.cpp
-PerFragmentOperations.h
-/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.h
-
-/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.cpp
-PerVertexOperations.h
-/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.cpp
+ShapeStructs.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.h
 
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm/glm/./detail/type_mat2x2.hpp
 type_vec2.hpp

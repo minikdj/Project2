@@ -49,23 +49,19 @@ std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vect
 
 void PerVertex::applyLighting( std::vector<VertexData> & worldCoords )
 {
-    for (auto wCoord : worldCoords) {
-
+    for(auto wCoord : worldCoords) {
+                    
         double alpha = wCoord.material.diffuseColor.a;
         color totalLight = wCoord.material.emissiveColor;
-
-        for (auto light : lights) {
-
-            totalLight += light->illuminate(PerVertex::eyePositionInWorldCoords, 
-                    wCoord.worldPosition, wCoord.worldNormal, wCoord.material);
-
+        for(auto light : lights) {
+            totalLight += light->illuminate(PerVertex::eyePositionInWorldCoords,
+                                                        wCoord.worldPosition,
+                                                        wCoord.worldNormal,
+                                                        wCoord.material);
         }
-
-        wCoord.material.diffuseColor.a = alpha;
         wCoord.shadedColor = totalLight;
-
+                                    
     }
-
 } // end applyLighting
 
 //********************************** Vertex Transformation *********************************

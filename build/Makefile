@@ -123,6 +123,33 @@ output/fast:
 	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/build
 .PHONY : output/fast
 
+source/Camera.o: source/Camera.cpp.o
+
+.PHONY : source/Camera.o
+
+# target to build an object file
+source/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Camera.cpp.o
+.PHONY : source/Camera.cpp.o
+
+source/Camera.i: source/Camera.cpp.i
+
+.PHONY : source/Camera.i
+
+# target to preprocess a source file
+source/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Camera.cpp.i
+.PHONY : source/Camera.cpp.i
+
+source/Camera.s: source/Camera.cpp.s
+
+.PHONY : source/Camera.s
+
+# target to generate assembly for a file
+source/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/source/Camera.cpp.s
+.PHONY : source/Camera.cpp.s
+
 source/ClippingPlane.o: source/ClippingPlane.cpp.o
 
 .PHONY : source/ClippingPlane.o
@@ -375,6 +402,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... output"
+	@echo "... source/Camera.o"
+	@echo "... source/Camera.i"
+	@echo "... source/Camera.s"
 	@echo "... source/ClippingPlane.o"
 	@echo "... source/ClippingPlane.i"
 	@echo "... source/ClippingPlane.s"

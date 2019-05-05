@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Camera.cpp" "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles/output.dir/source/Camera.cpp.o"
   "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ClippingPlane.cpp" "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
   "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Defines.cpp" "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles/output.dir/source/Defines.cpp.o"
   "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.cpp" "/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/build/CMakeFiles/output.dir/source/FrameBuffer.cpp.o"

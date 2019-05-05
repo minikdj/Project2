@@ -1,5 +1,6 @@
 #include "Lab.h"
 #include "Lights.h"
+#include "Camera.h"
 
 
 /********************** GLOBALS ******************************/
@@ -44,6 +45,8 @@ ReferencePlane referencePlane;
 
 // Global to hold the rotation angle of objects in the scene
 double angle = glm::radians(45.0);
+
+Camera camera;
 
 /********************** END GLOBALS ******************************/
 
@@ -110,9 +113,8 @@ glm::dmat4 myPerspective(double fov, double aspect, double near, double far)
     mat[3][2] = (2.0 * far * near) / (near - far);
 
     return mat;
-} // end myPerspective
+} // end myPerspective // myOrthographic
 
-// myOrthographic
 glm::dmat4 myOrthographic(double left, double right, double bottom, double top, double near, double far)
 {
     glm::dmat4 mat;

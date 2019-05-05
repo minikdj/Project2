@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/output.dir/source/Camera.cpp.o"
   "CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
   "CMakeFiles/output.dir/source/Defines.cpp.o"
   "CMakeFiles/output.dir/source/FrameBuffer.cpp.o"

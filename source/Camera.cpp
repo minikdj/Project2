@@ -4,6 +4,8 @@ Camera::Camera(dvec3 position, dvec3 direction, dvec3 up) {
     viewTrans = glm::lookAt(position, direction, up);
 }
 
+Camera::~Camera() {}
+
 void Camera::move(dvec3 position, dvec3 direction, dvec3 up) {
     viewTrans = glm::lookAt(position, direction, up);
 }

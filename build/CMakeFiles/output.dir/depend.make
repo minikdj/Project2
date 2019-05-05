@@ -864,6 +864,7 @@ CMakeFiles/output.dir/source/FrameBuffer.cpp.o: /Users/danminik/Desktop/Files/Sc
 CMakeFiles/output.dir/source/FrameBuffer.cpp.o: /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm/glm/vec4.hpp
 CMakeFiles/output.dir/source/FrameBuffer.cpp.o: /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm/glm/vector_relational.hpp
 
+CMakeFiles/output.dir/source/Lab.cpp.o: ../source/headers/Camera.h
 CMakeFiles/output.dir/source/Lab.cpp.o: ../source/headers/ClippingPlane.h
 CMakeFiles/output.dir/source/Lab.cpp.o: ../source/headers/Defines.h
 CMakeFiles/output.dir/source/Lab.cpp.o: ../source/headers/FrameBuffer.h

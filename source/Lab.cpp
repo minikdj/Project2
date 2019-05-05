@@ -46,7 +46,7 @@ ReferencePlane referencePlane;
 // Global to hold the rotation angle of objects in the scene
 double angle = glm::radians(45.0);
 
-Camera camera;
+Camera camera(dvec3(0.0, 0.0, 12.0));
 
 /********************** END GLOBALS ******************************/
 
@@ -454,20 +454,56 @@ void polygonRenderMenu( int value )
 
 } // end polygonRenderMenu
 
+void cameraMenu(int value)
+{
+	switch( value ) {
+        case( 0  ):
+            camera.move(dvec3(0.0, 0.0, 12.0));
+            break;
+
+		case( 1 ):
+            camera.move(dvec3(0.0, 0.0, -12.0));
+			break;
+
+		case( 2 ):
+            camera.move(dvec3(0.0, 15.0 * glm::pow(2, 0.5), -15.0 * glm::pow(2, 0.5)));
+            break;
+
+		case( 3 ):
+            camera.move(dvec3(0.0, 15.0, 0.0), dvec3(0.0, 0.0, 0.0), dvec3(1.0, 0.0, -1.0));
+
+			break;
+
+		default:
+			std::cout << "Invalid view selection " << std::endl;
+	}
+
+    PerVertex::viewingTransformation = camera.getViewingTransformation();
+
+	// Signal GLUT to call display callback
+	glutPostRedisplay( );
+
+
+}
+
 void viewMenu( int value )
 {
 	switch( value ) {
 
 		case( 1 ):
-			PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -12.0 ) );
+			// PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -12.0 ) );
+            camera.move(dvec3(0.0, 0.0, -12.0));
 			break;
 
 		case( 2 ):
-            PerVertex::viewingTransformation = glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(45.0f), glm::vec3(1.0, 0.0, 0.0));
+            // PerVertex::viewingTransformation = glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(45.0f), glm::vec3(1.0, 0.0, 0.0));
+            camera.move(dvec3(0.0, 15.0 * glm::pow(2, 0.5), -15.0 * glm::pow(2, 0.5)));
             break;
 
 		case( 3 ):
-            PerVertex::viewingTransformation = glm::rotate(glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(90.0f), glm::vec3(1.0, 0.0, 0.0)), glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+            // PerVertex::viewingTransformation = glm::rotate(glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(90.0f), glm::vec3(1.0, 0.0, 0.0)), glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+            camera.move(dvec3(0.0, 15.0, 0.0), dvec3(0.0, 0.0, 0.0), dvec3(1.0, 0.0, -1.0));
+
 			break;
 
 		case( 4 ):
@@ -485,6 +521,8 @@ void viewMenu( int value )
 		default:
 			std::cout << "Invalid view selection " << std::endl;
 	}
+
+    PerVertex::viewingTransformation = camera.getViewingTransformation();
 
 	// Signal GLUT to call display callback
 	glutPostRedisplay( );
@@ -553,15 +591,22 @@ int main(int argc, char** argv)
 	glutAddMenuEntry("Vertical Split", 2);
 	glutAddMenuEntry("Horizontal Split", 3);
 
+    int cameraMenuID = glutCreateMenu(cameraMenu);
+    glutAddMenuEntry("View 0", 0);
+    glutAddMenuEntry("View 1", 1);
+    glutAddMenuEntry("View 2", 2);
+    glutAddMenuEntry("View 3", 3);
+
 
 	// Create main submenu
 	int menu1id = glutCreateMenu( mainMenu );
 	glutAddSubMenu( "Render", polyMenuid );
+    glutAddSubMenu("Camera", cameraMenuID);
 	glutAddSubMenu( "View", viewMenuid );
 	glutAddSubMenu("Viewport", viewportMenuid);
 	glutAddMenuEntry( "Quit", 0 );
 
-#warning get lighting working
+   #warning get lighting working
     // per fragment lighting false, the other one to true
 
 	// Attach menu to right mouse button
@@ -581,7 +626,7 @@ int main(int argc, char** argv)
 	// ************* Object vertex coordinate initialization ***********************
 
 	// Set the initial viewing tranformation for the scene
-	PerVertex::viewingTransformation = glm::translate(dvec3(0.0, 0.0, -14.0));
+	PerVertex::viewingTransformation = glm::translate(dvec3(0.0, 0.0, -12.0));
 
 	// Enter the GLUT main loop. Control will not return until the window is closed.
 	glutMainLoop();

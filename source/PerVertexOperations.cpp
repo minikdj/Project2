@@ -337,7 +337,6 @@ void PerVertex::processLineSegments(const std::vector<VertexData> & objectCoords
   	}
   
   	// Clipping
-	//TODO
 	std::vector<VertexData> ndcCoords = clipPolygon(clipCoords);
   
 	// Window Transformation

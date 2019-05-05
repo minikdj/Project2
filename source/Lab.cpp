@@ -12,6 +12,12 @@ float rotationY = 0.0f;
 
 std::vector<LightSource*> lights;
 
+// light sources
+LightSource ambientLight(color(0.15, 0.15, 0.15, 1.0));
+PositionalLight lightPos(dvec3(-3, 3, -3), dvec4(0.75, 0.75, 0.75, 1.0));
+DirectionalLight lightDir(dvec3(1, 1, 1), dvec4(1.0, 1.0, 1.0, 1.0));
+SpotLight lightSpot(dvec3(0.0, 10.0, 0.0), dvec3(0.0, -1.0, 0.0), glm::cos(glm::radians(15.0)), color(1.0, 1.0, 1.0, 1.0));
+
 const GLint FRAMES_PER_SECOND = 60; // Desired maximum number of frames per second
 const GLint FRAME_INTERVAL = 1000 / FRAMES_PER_SECOND; // Interval in milliseconds between frames
 
@@ -63,8 +69,7 @@ void renderObjects()
     redSphere.draw();
 
     whitePyramid.setPosition(dvec3(10.0 * glm::sin(-angle), 3.0, 10 * glm::cos(-angle)));
-#warning make this tumble later
-    whitePyramid.setOrientation(-angle, dvec3(1.0, -1.0, 0.0));
+    whitePyramid.setOrientation(0, dvec3(1.0, 1.0, 1.0));
     whitePyramid.draw();
 
     greenBox.setPosition(dvec3(-0.5, -2.5, -0.5));
@@ -518,6 +523,11 @@ int main(int argc, char** argv)
 	glutSpecialFunc(SpecialKeysCB);
 	glutIdleFunc(animate);
 
+    lights.push_back(&ambientLight);
+    lights.push_back(&lightPos);
+    lights.push_back(&lightDir);
+    lights.push_back(&lightSpot);
+
 	// Create polygon render submenu
 	int polyMenuid = glutCreateMenu( polygonRenderMenu );
 	// Specify menu items and integer identifiers
@@ -549,6 +559,8 @@ int main(int argc, char** argv)
 	glutAddSubMenu("Viewport", viewportMenuid);
 	glutAddMenuEntry( "Quit", 0 );
 
+#warning get lighting working
+    // per fragment lighting false, the other one to true
 
 	// Attach menu to right mouse button
 	glutAttachMenu( GLUT_RIGHT_BUTTON );

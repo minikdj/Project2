@@ -45,20 +45,166 @@ std::vector<VertexData> PerVertex::removeBackwardFacingTriangles(const std::vect
 
 }
 
+//********************************** Clipping *********************************
+
+// Clips a convex polygon against a plane.
+std::vector<VertexData> PerVertex::clipAgainstPlane(std::vector<VertexData> & verts, ClippingPlane & plane)
+{
+	std::vector<VertexData> output;
+
+	if (verts.size() > 2) {
+
+		verts.push_back(verts[0]);
+
+		for (unsigned int i = 1; i < verts.size(); i++) {
+
+			bool v0In = plane.insidePlane(verts[i - 1]);
+			bool v1In = plane.insidePlane(verts[i]);
+
+			if (v0In && v1In) {
+
+				output.push_back(verts[i]);
+			}
+			else if (v0In || v1In) {
+
+				VertexData I = plane.findIntersection(verts[i - 1], verts[i]);
+				output.push_back(I);
+
+				if (!v0In && v1In) {
+
+					output.push_back(verts[i]);
+				}
+			}
+		}
+	}
+
+	return output;
+
+} // end clipAgainstPlane
+
+
+// Break general convex polygons into triangles.
+std::vector<VertexData> PerVertex::triangulate(const std::vector<VertexData> & poly)
+{
+	std::vector<VertexData> triangles;
+	triangles.push_back(poly[0]);
+	triangles.push_back(poly[1]);
+	triangles.push_back(poly[2]);
+
+	for (unsigned int i = 2; i < poly.size() - 1; i++) {
+
+		triangles.push_back(poly[0]);
+		triangles.push_back(poly[i]);
+		triangles.push_back(poly[i + 1]);
+	}
+
+	return triangles;
+
+} // end triangulate
+
+
+// Clip polygons against a a normalized view volume. Vertices should be in 
+// clip coordinates.
+std::vector<VertexData> PerVertex::clipPolygon(const std::vector<VertexData> & clipCoords)
+{
+	std::vector<VertexData> ndcCoords;
+
+	if (clipCoords.size()>2) {
+
+		std::vector<VertexData> polygon;
+
+		for (unsigned int i = 0; i<clipCoords.size() - 2; i += 3) {
+
+			polygon.push_back(clipCoords[i]);
+			polygon.push_back(clipCoords[i + 1]);
+			polygon.push_back(clipCoords[i + 2]);
+
+			for (ClippingPlane plane : ndcPlanes) {
+				polygon = clipAgainstPlane(polygon, plane);
+			}
+
+			if (polygon.size() > 3) {
+				polygon = triangulate(polygon);
+			}
+
+			for (VertexData v : polygon) {
+				ndcCoords.push_back(v);
+			}
+			polygon.clear();
+		}
+	}
+
+	return ndcCoords;
+
+} // end clip
+
+
+  // Clip line segments against a a normalized view volume. Vertices should be in 
+  // clip coordinates.
+std::vector<VertexData> PerVertex::clipLineSegments(const std::vector<VertexData> & clipCoords)
+{
+	std::vector<VertexData> ndcCoords;
+
+	if (clipCoords.size()>1) {
+
+		for (unsigned int i = 0; i < clipCoords.size()-1; i += 2) {
+
+			VertexData v0 = clipCoords[i];
+			VertexData v1 = clipCoords[i + 1];
+
+			bool outsideViewVolume = false;
+
+			for (unsigned int i = 0; i < ndcPlanes.size(); i++) {
+			//for (Plane plane : ndcPlanes) {
+
+				ClippingPlane plane = ndcPlanes[i];
+
+				bool v0In = ndcPlanes[i].insidePlane(v0);
+				bool v1In = ndcPlanes[i].insidePlane(v1);
+
+				if (v0In == false && v1In == false) { 
+
+					outsideViewVolume = true;
+					break; // Line segment is entirely clipped
+
+				}
+				else if (v0In == true && v1In == false) {
+
+					v1 = ndcPlanes[i].findIntersection(v0, v1);
+				}
+				else if (v0In == false && v1In == true) {
+
+					v0 = ndcPlanes[i].findIntersection(v0, v1);
+				}
+			}
+
+			if (outsideViewVolume == false) {
+				ndcCoords.push_back(v0);
+				ndcCoords.push_back(v1);
+			}
+		}
+	}
+
+	return ndcCoords;
+
+} // end clip
+
 //********************************** Vertex Shading *********************************
 
 void PerVertex::applyLighting( std::vector<VertexData> & worldCoords )
 {
-    for(auto wCoord : worldCoords) {
+    for(auto & wCoord : worldCoords) {
                     
         double alpha = wCoord.material.diffuseColor.a;
         color totalLight = wCoord.material.emissiveColor;
-        for(auto light : lights) {
+
+        for(auto & light : lights) {
             totalLight += light->illuminate(PerVertex::eyePositionInWorldCoords,
                                                         wCoord.worldPosition,
                                                         wCoord.worldNormal,
                                                         wCoord.material);
         }
+        wCoord.material.diffuseColor.a = alpha;
         wCoord.shadedColor = totalLight;
                                     
     }
@@ -192,7 +338,7 @@ void PerVertex::processLineSegments(const std::vector<VertexData> & objectCoords
   
   	// Clipping
 	//TODO
-	std::vector<VertexData> ndcCoords = clipCoords;
+	std::vector<VertexData> ndcCoords = clipPolygon(clipCoords);
   
 	// Window Transformation
   	std::vector<VertexData> windowCoords = transformVertices(viewportTransformation, ndcCoords);

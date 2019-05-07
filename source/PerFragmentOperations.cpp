@@ -59,18 +59,42 @@ void FragmentOperations::applyLighting( Fragment & fragment)
 
 void FragmentOperations::processFragment(Fragment & fragment)
 {
-    if (FragmentOperations::perPixelLightingEnabled) {
-        FragmentOperations::applyLighting(fragment);
-    }
-    if( fogSetting != NO_FOG ) {
 
-	    fogColor = frameBuffer.getClearColor( );
-		applyFog( fragment );
-	}
 
     // Set the color for the pixel 
     if (frameBuffer.getDepth((int)fragment.windowPosition.x, (int)fragment.windowPosition.y) > fragment.windowPosition.z) {
-        frameBuffer.setPixel((int)fragment.windowPosition.x, (int)fragment.windowPosition.y, fragment.shadedColor);
+        if (FragmentOperations::perPixelLightingEnabled) {
+            FragmentOperations::applyLighting(fragment);
+        }
+        if( fogSetting != NO_FOG ) {
+
+	        fogColor = frameBuffer.getClearColor( );
+		    applyFog( fragment );
+	    }
+
+        //Save alpha value for use in blending
+	    double alpha = fragment.material.diffuseColor.a;	
+
+
+
+    	if (alpha < 1.0) {
+
+        	color destination = frameBuffer.getPixel((int)fragment.windowPosition.x, (int)fragment.windowPosition.y);
+
+	    	color source = fragment.shadedColor;
+
+		    color blendedColor = alpha * source + (1.0 - alpha ) * destination;
+
+		    // Set the color for the pixel 
+		    frameBuffer.setPixel((int)fragment.windowPosition.x, (int)fragment.windowPosition.y, blendedColor);
+
+	    }
+	    else {
+		    // Set the color for the pixel 
+		    frameBuffer.setPixel((int)fragment.windowPosition.x, (int)fragment.windowPosition.y, fragment.shadedColor);
+	    }
+        // frameBuffer.setPixel((int)fragment.windowPosition.x, (int)fragment.windowPosition.y, fragment.shadedColor);
         frameBuffer.setDepth((int)fragment.windowPosition.x, (int)fragment.windowPosition.y, fragment.windowPosition.z);
     }
 } // end processFragment
+

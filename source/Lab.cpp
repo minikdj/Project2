@@ -309,6 +309,34 @@ static void ResizeCB(int width, int height)
 
 } // end ResizeCB
 
+void lightingMenu(int value) 
+{
+    switch( value  ) {
+
+    case( 0  ):
+        PerVertex::perVertexLightingEnabled = true;
+        FragmentOperations::perPixelLightingEnabled = false;
+        break;
+    case( 1  ):
+        PerVertex::perVertexLightingEnabled = false;
+        FragmentOperations::perPixelLightingEnabled = true;
+        break;
+    case( 2 ):
+        PerVertex::perVertexLightingEnabled = false;
+        FragmentOperations::perPixelLightingEnabled = false;
+    default:
+        std::cout << "Invalid lighting selection " << std::endl;
+                                                                                                                                    
+    }
+
+    std::cout << "lighting selection " << std::endl;
+
+    // Signal GLUT to call display callback
+    glutPostRedisplay(  );
+
+
+}
+
 void viewPortMenu(int value)
 {
 	switch (value) {
@@ -619,6 +647,11 @@ int main(int argc, char** argv)
 	glutAddMenuEntry("Vertical Split", 2);
 	glutAddMenuEntry("Horizontal Split", 3);
 
+    int lightingMenuId = glutCreateMenu(lightingMenu);
+    glutAddMenuEntry("per vertex", 0);
+    glutAddMenuEntry("per fragment", 1);
+    glutAddMenuEntry("no lighting", 2);
+
     int cameraMenuID = glutCreateMenu(cameraMenu);
     glutAddMenuEntry("View 0", 0);
     glutAddMenuEntry("View 1", 1);
@@ -637,7 +670,7 @@ int main(int argc, char** argv)
     glutAddSubMenu( "Render", polyMenuid  );
     glutAddSubMenu("View", viewMenuid);
     glutAddSubMenu("Viewport", viewportMenuid);
-    // glutAddSubMenu("Lighting", lightingMenuId);
+    glutAddSubMenu("Lighting", lightingMenuId);
     glutAddMenuEntry("Quit", 0);    
 
    #warning get lighting working

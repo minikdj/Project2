@@ -50,7 +50,7 @@ void FrameBuffer::setFrameBufferSize(const int width, const int height) {
 
 /**
  * * Returns the color to which the window is being cleared.
- * 
+ */
 color FrameBuffer::getClearColor(  )
 {
     color clear( clearColor[0] / 255.0, clearColor[1] / 255.0, clearColor[2] / 255.0, clearColor[3] / 255.0  );
@@ -58,7 +58,7 @@ color FrameBuffer::getClearColor(  )
     return clear;
 
 }
-*/
+
 /**
 * Sets the color to which the window will be cleared. Does NOT
 * actually clear the window

@@ -147,7 +147,7 @@ public:
  *  * Returns the color to which the window is being cleared.
        */
 
-//    color getClearColor(   );
+    color getClearColor(   );
 
 	protected:
 

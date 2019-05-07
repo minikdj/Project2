@@ -228,6 +228,33 @@ void twoViewsSplitHorizontally()
 
 } // end twoViewsSplitHorizontally
 
+void fogMenu( int value )
+{
+	switch( value ) {
+
+		case( 0 ):
+			FragmentOperations::fogSetting = NO_FOG;
+			break;
+		case( 1 ):
+			FragmentOperations::fogSetting = LINEAR_FOG;
+			break;
+		case( 2 ):
+			FragmentOperations::fogSetting = EXPONENTIAL_FOG;
+			break;
+		case( 3 ):
+			FragmentOperations::fogSetting = EXPONENTIAL_2_FOG;
+			break;
+		default:
+			std::cout << "Invalid fog selection " << std::endl;
+	}
+
+	std::cout << "fog selection " << std::endl;
+
+	// Signal GLUT to call display callback
+	glutPostRedisplay( );
+
+} // end fogMenu
+
 
 /**
 * Acts as the display function for the window.
@@ -640,6 +667,12 @@ int main(int argc, char** argv)
 	glutAddMenuEntry( "View 5", 5 );
 	glutAddMenuEntry( "View 6", 6 );
 
+	int fogMenuid = glutCreateMenu( fogMenu );
+	glutAddMenuEntry( "No Fog", 0 );
+	glutAddMenuEntry( "Linear Fog", 1 );
+	glutAddMenuEntry( "Exponential Fog", 2 );
+	glutAddMenuEntry( "Exponential 2 Fog", 3 );
+	
 	// Create viewport submenu
 	int viewportMenuid = glutCreateMenu(viewPortMenu);
 	// Specify menu items and integer identifiers
@@ -666,7 +699,7 @@ int main(int argc, char** argv)
  */                       
     // Create main submenu
     int menu1id = glutCreateMenu(mainMenu);
-    // glutAddSubMenu( "Fog", fogMenuid  );
+    glutAddSubMenu( "Fog", fogMenuid  );
     glutAddSubMenu( "Render", polyMenuid  );
     glutAddSubMenu("View", viewMenuid);
     glutAddSubMenu("Viewport", viewportMenuid);

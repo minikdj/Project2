@@ -11,7 +11,6 @@ extern std::vector<LightSource*> lights;
 
 enum fogType { NO_FOG, LINEAR_FOG, EXPONENTIAL_FOG, EXPONENTIAL_2_FOG };
 
-
 struct Fragment {
 
 	color shadedColor; // Result of lighting calculations

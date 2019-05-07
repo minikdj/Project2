@@ -7,7 +7,7 @@ dmat4 PerVertex::projectionTransformation;
 dmat4 PerVertex::viewportTransformation;
 dvec3 PerVertex::eyePositionInWorldCoords;
 
-bool PerVertex::perVertexLightingEnabled = false;
+bool PerVertex::perVertexLightingEnabled = true;
 Render_Mode PerVertex::polygonRenderMode = FILL;
 
 // static Nnrmalized device coordinate horizontal and vertical limits

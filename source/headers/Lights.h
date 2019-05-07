@@ -76,16 +76,14 @@ struct PositionalLight : public LightSource
 
 			color totalForThisLight = BLACK;
 
-//            dvec3 lightDirection = (worldPosition - lightPositionWorldCoordinates) / glm::length(worldPosition - lightPositionWorldCoordinates);
-
-            dvec3 reflectionVec = glm::normalize(glm::reflect(lightPositionWorldCoordinates, worldNormal));
-
-            totalForThisLight += glm::max(glm::dot(lightPositionWorldCoordinates, worldNormal), 0.0) * 
-                diffuseLightColor * material.diffuseColor;
-            totalForThisLight += glm::pow(glm::max(0.0, glm::dot(reflectionVec, eyePosition)), material.shininess) * specularLightColor * material.specularColor;
+            dvec3 lightDir = glm::normalize(lightPositionWorldCoordinates - worldPosition);
+            dvec3 r = glm::normalize(2 * glm::dot(lightDir, worldNormal) * worldNormal - lightDir);
+            
+            totalForThisLight += glm::max(glm::dot(lightDir, worldNormal), 0.0) * diffuseLightColor * material.diffuseColor;
+            totalForThisLight += glm::pow(glm::max(glm::dot(lightDir, r), 0.0), material.shininess) * specularLightColor * material.specularColor;
             totalForThisLight += LightSource::illuminate(eyePosition, worldPosition, worldNormal, material);
 
-			return totalForThisLight;
+            return totalForThisLight;
 		}
 		else {
 
@@ -116,12 +114,14 @@ struct DirectionalLight : public LightSource
 	{
 		if( enabled ) {
 
+            dvec3 r = glm::normalize(2 * glm::dot(lightDirectionWorldCoordinates, worldNormal) * worldNormal - lightDirectionWorldCoordinates);
+
+
 			color totalForThisLight = material.emissiveColor;
-            dvec3 reflectionVec = glm::normalize(glm::reflect(lightDirectionWorldCoordinates, worldNormal));
 
             totalForThisLight += LightSource::illuminate(eyePosition, worldPosition, worldNormal, material);
             totalForThisLight += glm::max(glm::dot(lightDirectionWorldCoordinates, worldNormal), 0.0) * diffuseLightColor * material.diffuseColor;
-            totalForThisLight += glm::pow(glm::max(0.0, glm::dot(reflectionVec, eyePosition)), material.shininess) * specularLightColor * material.specularColor;
+            totalForThisLight += glm::pow(glm::max(glm::dot(lightDirectionWorldCoordinates, r), 0.0), material.shininess) * specularLightColor * material.specularColor;
 
 			return totalForThisLight;
 		}
@@ -158,13 +158,19 @@ struct SpotLight : public PositionalLight
 	{
 		dvec3 negLight = glm::normalize(worldPosition - lightPositionWorldCoordinates);
 
-		if( enabled ) {
 
-			color totalForThisLight = BLACK;
+		if( enabled ) {
+            color totalForThisLight = PositionalLight::illuminate(eyePosition, worldPosition, worldNormal, material);
+            
+            double spotCosine = glm::dot(negLight, -spotDirection);
+            if (spotCosine > cutOffCosineRadians) {
+                double falloffFactor = (1 - (1 - spotCosine)) / (1 - cutOffCosineRadians);
+                return totalForThisLight *= falloffFactor ;
+            }
 
             
 
-			return totalForThisLight;
+       		return totalForThisLight;
 		}
 		else {
 

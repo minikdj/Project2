@@ -128,6 +128,10 @@ Defines.h
 Material.h
 ../source/headers/Material.h
 
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.cpp
+FrameBuffer.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/FrameBuffer.h
+
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lab.cpp
 Lab.h
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lab.h
@@ -135,6 +139,28 @@ Lights.h
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Lights.h
 Camera.h
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Camera.h
+
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.cpp
+PerFragmentOperations.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerFragmentOperations.h
+
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.cpp
+PerVertexOperations.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.h
+
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Rasterization.cpp
+Rasterization.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Rasterization.h
+
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Shape.cpp
+Shape.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/Shape.h
+PerVertexOperations.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/PerVertexOperations.h
+
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.cpp
+ShapeStructs.h
+/Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/Project2/source/ShapeStructs.h
 
 /Users/danminik/Desktop/Files/School/SeniorYear/Spring/CSE287/Labs/glm/glm/./detail/type_mat2x2.hpp
 type_vec2.hpp

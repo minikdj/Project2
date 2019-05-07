@@ -143,6 +143,11 @@ public:
 	* @ return depth that is stored for the pixel position
 	*/
 	float getDepth(const float x, const float y);
+/**
+ *  * Returns the color to which the window is being cleared.
+       */
+
+//    color getClearColor(   );
 
 	protected:
 

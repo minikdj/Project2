@@ -129,7 +129,35 @@ glm::dmat4 myOrthographic(double left, double right, double bottom, double top, 
 
     return mat;
 }
+/*
+void fogMenu( int value  )
+{
+    switch( value  ) {
 
+    case( 0  ):
+        FragmentOperations::fogSetting = NO_FOG;
+        break;
+    case( 1  ):
+        FragmentOperations::fogSetting = LINEAR_FOG;
+        break;
+    case( 2  ):
+        FragmentOperations::fogSetting = EXPONENTIAL_FOG;
+        break;
+    case( 3  ):
+        FragmentOperations::fogSetting = EXPONENTIAL_2_FOG;
+        break;
+    default:
+        std::cout << "Invalid fog selection " << std::endl;
+                                                                                                                                    
+    }
+
+    std::cout << "fog selection " << std::endl;
+
+    // Signal GLUT to call display callback
+    glutPostRedisplay(  );
+
+} // end fogMenu
+*/
 void twoViewsSplitVertically()
 {
     // Render left side view
@@ -596,15 +624,21 @@ int main(int argc, char** argv)
     glutAddMenuEntry("View 1", 1);
     glutAddMenuEntry("View 2", 2);
     glutAddMenuEntry("View 3", 3);
-
-
-	// Create main submenu
-	int menu1id = glutCreateMenu( mainMenu );
-	glutAddSubMenu( "Render", polyMenuid );
-    glutAddSubMenu("Camera", cameraMenuID);
-	glutAddSubMenu( "View", viewMenuid );
-	glutAddSubMenu("Viewport", viewportMenuid);
-	glutAddMenuEntry( "Quit", 0 );
+/*
+    int fogMenuid = glutCreateMenu( fogMenu  );
+    glutAddMenuEntry( "No Fog", 0  );
+    glutAddMenuEntry( "Linear Fog", 1  );
+    glutAddMenuEntry( "Exponential Fog", 2  );
+    glutAddMenuEntry( "Exponential 2 Fog", 3  );
+ */                       
+    // Create main submenu
+    int menu1id = glutCreateMenu(mainMenu);
+    // glutAddSubMenu( "Fog", fogMenuid  );
+    glutAddSubMenu( "Render", polyMenuid  );
+    glutAddSubMenu("View", viewMenuid);
+    glutAddSubMenu("Viewport", viewportMenuid);
+    // glutAddSubMenu("Lighting", lightingMenuId);
+    glutAddMenuEntry("Quit", 0);    
 
    #warning get lighting working
     // per fragment lighting false, the other one to true
